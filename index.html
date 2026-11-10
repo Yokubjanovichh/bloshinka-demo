@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bloshinka.com — два варианта дизайна</title>
+<link rel="icon" type="image/svg+xml" href="assets/a/tag-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600&family=Unbounded:wght@700&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #EEEDEA;
+  color: #1C1B1A;
+  font: 400 16px/1.55 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1120px; margin: 0 auto; padding: 36px 16px 56px; }
+h1 {
+  margin: 0;
+  font: 700 clamp(26px, 6.4vw, 40px)/1.15 "Inter", system-ui, sans-serif;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.intro { margin: 12px 0 0; max-width: 40em; color: #55524E; font-size: 17px; }
+.grid { display: grid; gap: 20px; margin-top: 28px; }
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 24px;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 18px 36px -20px rgba(0, 0, 0, .35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(0, 0, 0, .06), 0 26px 44px -22px rgba(0, 0, 0, .45); }
+.card:focus-visible { outline: 3px solid #1677C2; outline-offset: 4px; }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 1440 / 900; object-fit: cover; }
+.card-body { padding: 20px 22px 24px; }
+.card p { margin: 8px 0 0; }
+.card-a { background: #F6F0E6; color: #2B2420; }
+.card-a h2 { margin: 0; font: 600 28px/1.2 "Lora", Georgia, serif; }
+.card-a p { color: #6B5E55; }
+.card-b { background: #FFFFFF; color: #111111; }
+.card-b h2 { margin: 0; font: 700 23px/1.25 "Unbounded", "Arial Black", sans-serif; letter-spacing: -.02em; }
+.card-b p { color: #5B6472; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 0 22px;
+  font-weight: 600;
+}
+.card-a .btn { border-radius: 12px; background: #C8553D; color: #fff; font-size: 17px; font-weight: 700; }
+.card-b .btn { border-radius: 999px; background: #111111; color: #fff; }
+.note { margin: 28px 0 0; color: #55524E; font-size: 15px; }
+@media (min-width: 800px) {
+  .wrap { padding: 64px 40px 80px; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card, .card:hover { transition: none; transform: none; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Bloshinka.com: два варианта главной страницы</h1>
+  <p class="intro">Это демо для выбора стиля. Тексты, цифры и фото пока примерные, форма заявки ничего не отправляет.</p>
+
+  <div class="grid">
+    <a class="card card-a" href="variant-a/">
+      <img src="assets/preview/a.jpg" alt="Первый экран варианта A «Винтаж»" width="960" height="600">
+      <div class="card-body">
+        <h2>A. «Винтаж»</h2>
+        <p>Теплый, в духе барахолки: полароиды, ценники, пометки от руки. Ближе всего к нынешним текстам сайта.</p>
+        <span class="btn">Открыть вариант A</span>
+      </div>
+    </a>
+    <a class="card card-b" href="variant-b/">
+      <img src="assets/preview/b.jpg" alt="Первый экран варианта B «Телеграм-маркет»" width="960" height="600">
+      <div class="card-body">
+        <h2>B. «Телеграм-маркет»</h2>
+        <p>Яркий и современный, похож на сам Телеграм: телефон с постом из канала и стикер «49 руб.».</p>
+        <span class="btn">Открыть вариант B</span>
+      </div>
+    </a>
+  </div>
+
+  <p class="note">Лучше открыть оба варианта с телефона: так сайт увидит большинство посетителей из Телеграма.</p>
+</main>
+</body>
+</html>
