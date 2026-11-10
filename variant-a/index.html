@@ -551,8 +551,6 @@ a { color: inherit; }
   font-weight: 700;
   font-size: 15px;
 }
-.post-stats span { display: inline-flex; align-items: center; gap: 4px; }
-.post-stats svg { width: 16px; height: 16px; }
 
 /* почему у нас */
 .facts {
@@ -561,7 +559,7 @@ a { color: inherit; }
   margin-top: 36px;
 }
 .fact { padding-top: 22px; border-top: 1px dashed rgba(255, 255, 255, .5); }
-.fact-big { font: 600 44px/1.05 var(--serif); letter-spacing: -.01em; }
+.fact-big { font: 600 clamp(32px, 9.6vw, 40px)/1.08 var(--serif); letter-spacing: -.01em; }
 .fact-label { margin-top: 6px; font-weight: 700; font-size: 17px; }
 .fact-text { margin-top: 8px; max-width: 30em; color: rgba(255, 255, 255, .9); }
 
@@ -734,7 +732,9 @@ textarea.input { min-height: 112px; resize: vertical; }
   .posts { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; }
   .field-row { grid-template-columns: 1fr 1fr; }
   .form-card { padding: 36px 32px 32px; }
-  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+  .fact { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+  .fact-big { font-size: 30px; }
 }
 
 /* ================= десктоп ================= */
@@ -808,8 +808,8 @@ textarea.input { min-height: 112px; resize: vertical; }
   .post:nth-child(even) { transform: translateY(18px); }
   .post-photo img { aspect-ratio: 1; }
 
-  .fact-big { font-size: 54px; }
-  .facts { margin-top: 48px; gap: 40px; }
+  .fact-big { font-size: 40px; }
+  .facts { margin-top: 48px; gap: 0 40px; }
 
   .form-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: start; }
   .form-intro { position: sticky; top: 32px; padding-top: 24px; }
@@ -936,7 +936,7 @@ textarea.input { min-height: 112px; resize: vertical; }
   <section class="section section-kraft" id="what" aria-labelledby="what-title">
     <div class="wrap">
       <h2 class="h2" id="what-title">Что можно продавать</h2>
-      <p class="lead">Если вещь вам больше не нужна, она найдет своего человека.</p>
+      <p class="lead">Вещи, которые вам больше не нужны, могут пригодиться кому-то еще.</p>
       <ul class="cats">
         <li class="cat">
           <img src="../assets/a/icon-clothes.svg" alt="" width="64" height="64">
@@ -976,7 +976,7 @@ textarea.input { min-height: 112px; resize: vertical; }
   <section class="section" id="examples" aria-labelledby="examples-title">
     <div class="wrap">
       <h2 class="h2" id="examples-title">Примеры объявлений</h2>
-      <p class="lead">Так выглядят посты в канале. У каждой вещи своя история.</p>
+      <p class="lead">Так будет выглядеть ваше объявление в канале. У каждой вещи своя история.</p>
       <div class="posts">
 
         <article class="post">
@@ -994,7 +994,7 @@ textarea.input { min-height: 112px; resize: vertical; }
             </div>
             <div class="post-line">
               <p class="post-tags">#техника #винтаж</p>
-              <span class="post-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>846</span><time>14:32</time></span>
+              <span class="post-stats"><time>14:32</time></span>
             </div>
           </div>
           <span class="post-btn" aria-hidden="true">Написать продавцу</span>
@@ -1015,7 +1015,7 @@ textarea.input { min-height: 112px; resize: vertical; }
             </div>
             <div class="post-line">
               <p class="post-tags">#одежда</p>
-              <span class="post-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>612</span><time>12:05</time></span>
+              <span class="post-stats"><time>12:05</time></span>
             </div>
           </div>
           <span class="post-btn" aria-hidden="true">Написать продавцу</span>
@@ -1036,7 +1036,7 @@ textarea.input { min-height: 112px; resize: vertical; }
             </div>
             <div class="post-line">
               <p class="post-tags">#детские_вещи</p>
-              <span class="post-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>731</span><time>10:47</time></span>
+              <span class="post-stats"><time>10:47</time></span>
             </div>
           </div>
           <span class="post-btn" aria-hidden="true">Написать продавцу</span>
@@ -1057,7 +1057,7 @@ textarea.input { min-height: 112px; resize: vertical; }
             </div>
             <div class="post-line">
               <p class="post-tags">#дом #авторское</p>
-              <span class="post-stats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>958</span><time>09:18</time></span>
+              <span class="post-stats"><time>09:18</time></span>
             </div>
           </div>
           <span class="post-btn" aria-hidden="true">Написать продавцу</span>
@@ -1073,19 +1073,19 @@ textarea.input { min-height: 112px; resize: vertical; }
       <h2 class="h2" id="why-title">Почему у нас</h2>
       <ul class="facts">
         <li class="fact">
-          <p class="fact-big">12&nbsp;400</p>
-          <p class="fact-label">подписчиков в канале</p>
-          <p class="fact-text">Ваше объявление увидят тысячи людей, которые читают канал каждый день.</p>
-        </li>
-        <li class="fact">
-          <p class="fact-big">24&nbsp;часа</p>
-          <p class="fact-label">максимум до публикации</p>
-          <p class="fact-text">Обычно пост выходит через несколько часов после оплаты. Ссылку пришлем в Телеграм.</p>
-        </li>
-        <li class="fact">
           <p class="fact-big">49&nbsp;руб.</p>
           <p class="fact-label">за одно объявление</p>
-          <p class="fact-text">Фиксированная цена без процентов с продажи.</p>
+          <p class="fact-text">Фиксированная цена, оплата переводом после нашего сообщения.</p>
+        </li>
+        <li class="fact">
+          <p class="fact-big">Без регистрации</p>
+          <p class="fact-label">заявка прямо на сайте</p>
+          <p class="fact-text">Заполните форму, остальное сделаем мы.</p>
+        </li>
+        <li class="fact">
+          <p class="fact-big">Напрямую</p>
+          <p class="fact-label">покупатели пишут вам</p>
+          <p class="fact-text">О цене и передаче договариваетесь сами, без посредников.</p>
         </li>
       </ul>
     </div>
@@ -1175,7 +1175,7 @@ textarea.input { min-height: 112px; resize: vertical; }
       <div class="faq-list">
         <details class="faq-item">
           <summary>Сколько стоит?</summary>
-          <div class="answer"><p>Размещение одного объявления стоит 49&nbsp;руб. Процентов с продажи нет: покупатели пишут вам напрямую, и вы договариваетесь сами.</p></div>
+          <div class="answer"><p>Размещение одного объявления стоит 49&nbsp;руб. Покупатели пишут вам напрямую, и о цене вы договариваетесь сами.</p></div>
         </details>
         <details class="faq-item">
           <summary>Как оплатить?</summary>
@@ -1183,15 +1183,15 @@ textarea.input { min-height: 112px; resize: vertical; }
         </details>
         <details class="faq-item">
           <summary>Когда выйдет объявление?</summary>
-          <div class="answer"><p>Обычно через несколько часов после оплаты, максимум&nbsp;— в течение суток. Когда пост выйдет, мы пришлем вам ссылку.</p></div>
+          <div class="answer"><p>После оплаты мы публикуем пост в канале и присылаем вам ссылку.</p></div>
         </details>
         <details class="faq-item">
           <summary>Можно ли снять объявление, если вещь продана?</summary>
-          <div class="answer"><p>Да. Напишите нам в Телеграм, и мы удалим пост или отметим, что вещь уже продана.</p></div>
+          <div class="answer"><p>Напишите нам в Телеграм&nbsp;— обсудим, что сделать с постом.</p></div>
         </details>
         <details class="faq-item">
           <summary>Что нельзя размещать?</summary>
-          <div class="answer"><p>Товары, запрещенные законом: оружие, лекарства, алкоголь, табак и вейпы, подделки брендов. Также не публикуем рекламу услуг и объявления без фото.</p></div>
+          <div class="answer"><p>Товары, запрещенные законом. Если сомневаетесь, подойдет ли ваша вещь, напишите нам в Телеграм до заявки.</p></div>
         </details>
       </div>
     </div>
